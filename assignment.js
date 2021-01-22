@@ -1,13 +1,23 @@
 //kilometerToMeter
-function kilometerToMeter(km){
-    let meter = km*1000;
-    return meter;
+function kilometerToMeter(kilometer) {
+    if (kilometer >= 1) {
+        let meter = kilometer * 1000;
+        return meter;
+    }
+    else if (kilometer < 1) {
+        return -1;
+    }
 }
 
 //budgetCalculator
-function budgetCalculator(watch, mobile, laptop){
-    let total = (watch*50) + (mobile*100) + (laptop*500);
-    return total;
+function budgetCalculator(watch, mobile, laptop) {
+    if (watch >= 1 && mobile >= 1 && laptop >= 1) {
+        let total = (watch * 50) + (mobile * 100) + (laptop * 500);
+        return total;
+    }
+    else{
+        return -1;
+    }
 }
 
 //hotelCost
@@ -26,11 +36,18 @@ function hotelCost(days){
         let cost = (10*100) + (10*80) + (remainingdays*50);
         return cost;
     }
+    else if(days<1){
+        return -1;
+    }
 }
 
 //megaFriend
 function megaFriend(arr){
-    let elementLength = arr[0].length;
+    if(arr.length == 0){
+        return -1;
+    }
+    else if(arr.length>=1){
+        let elementLength = arr[0].length;
     let element = arr[0];
     for(var i=1; i<arr.length; i++){
         if(arr[i].length>elementLength){
@@ -39,4 +56,5 @@ function megaFriend(arr){
         }
     }
     return element;
+    }
 }
